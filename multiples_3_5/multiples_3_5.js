@@ -14,28 +14,13 @@ describe("basic tests", function(){
 
 /****** START SOLUTION ******/
 function solution(number){
-    let summed = 0, numcheck = 0;
-    let valschecked = [5,3];
-    let dupvalschecked = [0];
-    // while the number to check is less than the argument number
-    for (let i = 1; numcheck < number; i++){
-      // while the loop goes through the values to check
-      for (let j = 0; j < valschecked.length; j++){
-        // number to check = the value of the array multipled by the iteration i
-        numcheck = valschecked[j] * i;
-        // if the updated number to check is less than the argument number
-        if(numcheck < number){
-          //if the same number to check is not in the list of duplicates
-          if(dupvalschecked.includes(numcheck) == false){
-            //add the number checked to the main sum of all the numbers
-            summed += numcheck;
-            // add the number checked to the duplicate array for future iterations
-            dupvalschecked.push(numcheck);
-          }
-        }
+    var sum = 0;
+    
+    for(var i = 1;i< number; i++){
+      if(i % 3 == 0 || i % 5 == 0){
+        sum += i
       }
     }
-    //return the end result
-    return summed;
+    return sum;
   }
 /****** END SOLUTION ******/
